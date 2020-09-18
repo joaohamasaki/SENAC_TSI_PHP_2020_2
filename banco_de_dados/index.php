@@ -69,4 +69,4 @@ if (mysqli_query( $db, 'DELETE FROM contatos WHERE id < 100') ) {
     echo "Não foi possível apagar o registro";
 }
 
-echo <br><br>Nome enviado: {$_POST ['nm']}, whatsapp: {$_POST ['whats'];  com sucesso:
+echo "<br><br>Nome enviado: {$_POST ['nm']}, whatsapp: {$_POST ['whats']";
