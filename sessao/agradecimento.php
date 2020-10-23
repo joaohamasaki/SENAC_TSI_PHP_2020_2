@@ -1,17 +1,19 @@
 <?php
 
-session_start();  //Tem que ser no começo antes de qualquer coisa enviada para o navegador
+session_start();
 
-echo "Você é o: " . $_SESSION['user'];
+echo 'Você é o: ' . $_SESSION['nome'] . '<br><br>';
 
-//REQUEST serve para poder acessar a variável mesmo vinda de post ou get.
-$nota = $_REQUEST['nota']; //Aqui pegamos o valor da variável enviada através do navegador, vindo da nps_tpl.php
+$nota = $_GET['nota']; // Existe o $_REQUEST que disponibiliza os valores de $_GET ou $_POST
+$protocolo = $_GET['protocolo'];
 
+if ( $nota >= 9 ) {
 
-if ($nota >= 9) {
+	echo "ESTAMOS MUITO FELIZES!!";
 
-    echo "<br><br>Estamos muito felizes!";
 } else {
 
-    echo "<br><br>Poxa, o que podemos fazer para você nos dar uma nota 10?";
+	echo "O que podemos fazer para você nos dar uma nota 10???";
 }
+
+echo "<br><br>Se protocolo é o $protocolo";
