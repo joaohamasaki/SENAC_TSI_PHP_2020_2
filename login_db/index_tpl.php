@@ -1,8 +1,33 @@
-<br>
-<center>
-	<a href="/senac-tsi-php-2020-2/login_db/nps_tpl.php">NPS</a> 
-	<a href="/senac-tsi-php-2020-2/login_db/outro.php">Outro</a> 
-	<a href="/senac-tsi-php-2020-2/login_db/qualquer.php">Qualquer</a> 
-	<a href="/senac-tsi-php-2020-2/login_db/novo/umoutroainda.php">Um outro ainda</a> 
-	<a href="/senac-tsi-php-2020-2/login_db/sair.php">Sair</a> 
-</center>
+<html>
+	<head>
+		<title>Meu site</title>
+	</head>
+	<body>
+		<br><br><br><br>
+		<center>
+			<table border="1">
+				<tr>
+					<td>
+						<form method="post" action="index.php">
+							<br>
+							<?php
+							if ( isset($msg) ) echo $msg;
+							?>
+							<br>
+							<br>
+							<label for="login">Login</label>
+							<input type="text" id="login" name="login">
+							<br><br>
+							<label for="senha">Senha</label>
+							<input type="password" id="senha" name="senha">
+							<br><br>
+							<a href="usuario/cadastro.php">Cadastre-se</a>
+							<br><br>
+							<input type="submit" name="entrar" value="Entrar">
+						</form>	
+					</td>
+				</tr>
+			</table>
+		</center>
+	</body>
+</html>
