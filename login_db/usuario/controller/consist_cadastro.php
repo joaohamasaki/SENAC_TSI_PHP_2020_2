@@ -21,7 +21,8 @@ if ( !filter_var( $email, FILTER_VALIDATE_EMAIL) ) {
 
 	$erros[] = 'E-mail inválido';
 
-} elseif ( ja_existe_email($email) ) {
+//faz o desvio do momento do cadastro e da edição com: && !isset($_POST['gravar'])
+} elseif ( ja_existe_email($email) && !isset($_POST['gravar']) ) {
 
 	$erros[] = 'E-mail já cadastrado';
 }
@@ -36,3 +37,7 @@ if ( strlen($senha) < 8 ) {
 
 	$erros[] = 'A confirmação da senha não é válida';
 }
+
+
+
+

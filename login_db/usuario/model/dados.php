@@ -30,3 +30,19 @@ function ja_existe_email( string $email ): bool
 
 	return is_numeric($registro['id']) ? true : false;
 }
+
+function gravar_usuario (string $nome, string $email, string $senha): ?int
+{
+	global $db;
+
+	$senha = password_hash($senha, PASSWORD_DEFAULT);
+
+	$stmt = $db->prepare('INSERT INTO usuario
+								(nome, email, senha)
+								VALUES
+								(:nome, :email, :senha)');
+
+	$stmt->bindParam(':nome', $nome);
+	$stmt->bindParam(':email', $email);
+	$stmt->bindParam(':senha', $senha);
+}
